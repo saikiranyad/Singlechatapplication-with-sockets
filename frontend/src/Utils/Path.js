@@ -1,1 +1,1 @@
-export const backendurl = 'http://localhost:4000'
+export const backendurl = 'http://localhost:4000'||'https://singlechatapplication-with-sockets.onrender.com'
