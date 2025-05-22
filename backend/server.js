@@ -14,11 +14,20 @@ const server = http.createServer(app);
 
 const port = process.env.PORT || 4000
 // middlewares
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://singlechatapplication-with-sockets-d4zw.onrender.com'
+];
+
 app.use(cors({
-    origin: 'https://singlechatapplication-with-sockets-d4zw.onrender.com',
-    // origin: 'http://localhost:5173',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true  
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))

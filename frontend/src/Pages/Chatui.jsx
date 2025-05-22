@@ -2354,7 +2354,7 @@ const Chatui = () => {
           <div className="flex items-center gap-2">
             {selectedUser && (
               <button className="p-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition-colors">
-                <FiVideo size={20} />
+                {/* <FiVideo size={20} /> */}
               </button>
             )}
 

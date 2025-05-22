@@ -1,12 +1,14 @@
 const initSocket = (server) => {
-  const io = require("socket.io")(server, {
-    cors: {
-      origin: 'https://singlechatapplication-with-sockets-d4zw.onrender.com',
-      // origin: 'http://localhost:5173',
-      methods: ["GET", "POST", "PUT", "DELETE"],
-      credentials: true,
-    },
-  })
+const io = require("socket.io")(server, {
+  cors: {
+    origin: [
+      'http://localhost:5173',
+      'https://singlechatapplication-with-sockets-d4zw.onrender.com'
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  },
+});
 
   // Track online users
   const onlineUsers = new Set()
