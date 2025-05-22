@@ -1889,7 +1889,7 @@ const Chatui = () => {
         console.log("New notification received:", notification)
 
         // Play notification sound
-        const notificationSound = new Audio("../../public/notificationsound.mp3")
+        const notificationSound = new Audio("../../public/comedynotificationsound.mp3")
         notificationSound.play().catch((err) => console.log("Error playing sound:", err))
 
         // Add notification to state
