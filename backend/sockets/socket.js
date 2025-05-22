@@ -1,7 +1,7 @@
 const initSocket = (server) => {
   const io = require("socket.io")(server, {
     cors: {
-      origin: "http://localhost:5173",
+      origin: 'https://singlechatapplication-with-sockets-d4zw.onrender.com',
       methods: ["GET", "POST", "PUT", "DELETE"],
       credentials: true,
     },
