@@ -369,6 +369,15 @@ const Signup = () => {
               Signup failed. Please try again.
             </p>
           )}
+          <p className="text-sm text-center text-blue-900 mt-4">
+            Already have an account?{' '}
+            <span
+              onClick={() => navigate('/login')}
+              className="text-blue-600 hover:underline cursor-pointer font-medium"
+            >
+              Login
+            </span>
+          </p>
         </form>
       </motion.div>
     </div>

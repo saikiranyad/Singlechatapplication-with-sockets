@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useLoginMutation } from '../redux/Api/userApi'; // adjust path
-import { useNavigate } from 'react-router-dom';
+import { useLoginMutation } from '../redux/Api/userApi';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Loginpage = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +15,7 @@ const Loginpage = () => {
     try {
       const res = await login({ email, password }).unwrap();
       console.log('Login successful:', res);
-      navigate('/'); // redirect after login
+      navigate('/');
     } catch (err) {
       console.error('Login failed:', err);
     }
@@ -69,6 +68,17 @@ const Loginpage = () => {
             {isLoading ? 'Logging in...' : 'Login'}
           </motion.button>
         </form>
+
+        {/* Register link */}
+        <div className="mt-6 text-center text-sm text-blue-900">
+          Don't have an account?{' '}
+          <Link
+            to="/signup"
+            className="text-blue-700 hover:underline font-semibold"
+          >
+            Create Account
+          </Link>
+        </div>
       </motion.div>
     </div>
   );

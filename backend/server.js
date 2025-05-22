@@ -16,6 +16,7 @@ const port = process.env.PORT || 4000
 // middlewares
 app.use(cors({
     origin: 'https://singlechatapplication-with-sockets-d4zw.onrender.com',
+    // origin: 'http://localhost:5173',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true  
 }));
